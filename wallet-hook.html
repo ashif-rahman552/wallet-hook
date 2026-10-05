@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wallet Hook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #000000;
+      --card: #ffffff;
+      --grey: #7d7d7d;
+      --text-light: #ffffff;
+      --text-dark: #000000;
+      --radius-card: 22px;
+      --radius-pill: 999px;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-title: "Impact", "Anton", system-ui;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: var(--font-main);
+      color: var(--text-light);
+    }
+
+    .phone-frame {
+      width: 390px;
+      height: 844px;
+      background: var(--bg);
+      border-radius: 40px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+      padding: 32px 24px;
+    }
+
+    .screen {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    .top-bars {
+      margin-bottom: 40px;
+    }
+
+    .bar {
+      height: 24px;
+      background: var(--grey);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      width: 80%;
+    }
+
+    .bar:nth-child(2) { width: 70%; }
+    .bar:nth-child(3) { width: 60%; }
+
+    .centered-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .app-logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 32px;
+  background: #ffffff;      /* keep the white rounded box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;         /* crop if image is larger */
+}
+
+.app-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;      /* keep full image visible */
+}
+    
+
+    .user-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 4px solid var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+
+    .title {
+      font-family: var(--font-title);
+      letter-spacing: 1px;
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+
+    .card {
+      margin: 20px auto 0;
+      padding: 24px 20px 28px;
+      background: var(--card);
+      border-radius: var(--radius-card);
+      color: var(--text-dark);
+    }
+
+    .field {
+      margin-bottom: 12px;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 10px 12px;
+      border: none;
+      outline: none;
+      background: var(--grey);
+      border-radius: 4px;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .field input::placeholder {
+      color: #f5f5f5;
+    }
+
+    .links-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin: 10px 0 18px;
+      color: #000;
+    }
+
+    .link-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 0 auto;
+      padding: 8px 32px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: var(--bg);
+      color: var(--text-light);
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .submit-btn:active {
+      transform: scale(0.97);
+    }
+
+    .bottom-logo-row,
+    .bottom-bars {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .bottom-logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 24px;
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dark);
+      font-weight: bold;
+      font-size: 10px;
+      text-align: center;
+      padding: 6px;
+    }
+
+    .bottom-bars .bar {
+      margin-bottom: 0;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 10px;
+      left: 6px;
+      font-size: 28px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .small-card-text {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #000;
+    }
+
+    /* Forgot / Verify screens reuse card & title */
+    .screen-forgot .card,
+    .screen-verify .card {
+      margin-top: 80px;
+    }
+
+    /* Home screen */
+    .home-wrapper {
+      height: 100%;
+      background: var(--card);
+      border-radius: 26px;
+      padding: 32px 20px 24px;
+      position: relative;
+      overflow: hidden;
+      color: var(--text-dark);
+    }
+
+    .home-back {
+      position: absolute;
+      top: 16px;
+      left: 12px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .home-title {
+      text-align: center;
+      font-family: var(--font-title);
+      margin-top: 8px;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .home-circle {
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: var(--grey);
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.8;
+    }
+
+    .home-content {
+      position: relative;
+      margin-top: 90px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .home-subtitle {
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+    }
+
+    .service-btn {
+      width: 80%;
+      margin: 0 auto 14px;
+      padding: 12px;
+      border-radius: 16px;
+      background: var(--grey);
+      border: none;
+      font-weight: 600;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    .service-btn:active {
+      transform: scale(0.98);
+      .app-logo {
+    width: 140px;
+    height: 140px;
+    border-radius: 32px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* NEW */
+  }
+    }
+    .wh-advice-card {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.wh-advice-text {
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: #000;
+}
+  </style>
+</head>
+<body>
+  <div class="phone-frame">
+    <!-- LOGIN SCREEN -->
+    <div id="screen-login" class="screen active">
+      <div class="top-bars">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <div class="centered-logo">
+          <div class="app-logo">
+    <img src="hook.png" alt="Wallet Hook logo" class="app-logo-img" />
+  </div>
+        <div class="user-icon">👤</div>
+        <div class="title">LOGIN</div>
+      </div>
+
+      <div class="card">
+        <form id="login-form">
+          <div class="field">
+            <input type="email" placeholder="Gmail" required />
+          </div>
+          <div class="field">
+            <input type="password" placeholder="password" required />
+          </div>
+
+          <div class="links-row">
+            <button type="button" class="link-btn" data-nav="forgot">forgot password</button>
+            <button type="button" class="link-btn" data-nav="create">create account</button>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- CREATE ACCOUNT SCREEN -->
+    <div id="screen-create" class="screen">
+      <div class="centered-logo" style="margin-top: 16px;">
+        <div class="user-icon">👤</div>
+        <div class="title">CREATE ACCOUNT</div>
+      </div>
+
+      <div class="card">
+        <form id="create-form">
+          <div class="field">
+            <input type="email" placeholder="Gmail" required />
+          </div>
+          <div class="field">
+            <input type="password" placeholder="password" required />
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Confirm password" required />
+          </div>
+
+          <div class="small-card-text">
+            already have an account
+            <button type="button" class="link-btn" data-nav="login">Login</button>
+          </div>
+
+          <div style="margin-top: 16px;">
+            <button type="submit" class="submit-btn">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="bottom-logo-row">
+        <div class="bottom-logo">WALLET HOOK</div>
+        <div class="bar"></div>
+        <div class="bar" style="width: 45%;"></div>
+      </div>
+    </div>
+
+    <!-- FORGOT PASSWORD SCREEN -->
+    <div id="screen-forgot" class="screen screen-forgot">
+      <div class="back-btn" data-nav="login">‹</div>
+
+      <div class="centered-logo" style="margin-top: 40px;">
+        <div class="app-logo" style="width: 120px; height: 120px;">WALLET<br />HOOK</div>
+        <div class="user-icon">👤</div>
+        <div class="title" style="font-size:20px;">forgot password</div>
+      </div>
+
+      <div class="card">
+        <form id="forgot-form">
+          <div class="field">
+            <input type="email" placeholder="Gmail" required />
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+
+      <div class="bottom-bars">
+        <div class="bar"></div>
+      </div>
+    </div>
+
+    <!-- VERIFY SCREEN -->
+    <div id="screen-verify" class="screen screen-verify">
+      <div class="back-btn" data-nav="forgot">‹</div>
+
+      <div class="centered-logo" style="margin-top: 40px;">
+        <div class="app-logo" style="width: 120px; height: 120px;">WALLET<br />HOOK</div>
+        <div class="user-icon">👤</div>
+        <div class="title" style="font-size:20px;">verify</div>
+      </div>
+
+      <div class="card">
+        <form id="verify-form">
+          <div class="field">
+            <input type="text" placeholder="enter verification code" required />
+          </div>
+          <div class="field">
+            <input type="password" placeholder="new password" required />
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Confirm password" required />
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+
+      <div class="bottom-bars">
+        <div class="bar" style="width: 40%; margin-right: auto; margin-left: auto;"></div>
+      </div>
+    </div>
+
+    <!-- HOME SCREEN -->
+    <div id="screen-home" class="screen">
+      <div class="home-wrapper">
+        <div class="home-back" data-nav="login">‹</div>
+
+        <div class="home-circle"></div>
+
+        <div class="home-content">
+          <div class="home-title">WELCOME</div>
+          <div class="home-subtitle">SELECT THE SERVICE</div>
+
+          <button class="service-btn">BUDGETING</button>
+          <button class="service-btn">PLANNING</button>
+          <button class="service-btn">SAVINGS</button>
+          <button class="service-btn">ADVICES</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const screens = {
+      login: document.getElementById("screen-login"),
+      create: document.getElementById("screen-create"),
+      forgot: document.getElementById("screen-forgot"),
+      verify: document.getElementById("screen-verify"),
+      home: document.getElementById("screen-home"),
+    };
+
+    function showScreen(name) {
+      Object.values(screens).forEach((el) => el.classList.remove("active"));
+      screens[name].classList.add("active");
+    }
+
+    document.querySelectorAll("[data-nav]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const target = el.getAttribute("data-nav");
+        showScreen(target);
+      });
+    });
+
+    document.getElementById("login-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      showScreen("home");
+    });
+
+    document.getElementById("create-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      showScreen("home");
+    });
+
+    document.getElementById("forgot-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      showScreen("verify");
+    });
+
+    document.getElementById("verify-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      showScreen("home");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<script src="/_next/static/chunks/a6dad97d9634a72d.js" noModule=""></script><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/hook.png"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/4b9eae0c8dc7e975.js"/><script src="/_next/static/chunks/f2f58a7e93290fbb.js" async=""></script><script src="/_next/static/chunks/6eb1bac6b57023f6.js" async=""></script><script src="/_next/static/chunks/turbopack-da1d1c3932c9a2c7.js" async=""></script><script src="/_next/static/chunks/2f236954d6a65e12.js" async=""></script><script src="/_next/static/chunks/aee0a9c6b42b3f55.js" async=""></script><div hidden=""><!--$--><!--/$--></div><div class="wh-root"><style>
+        .wh-root {
+          background:#111;
+          min-height:100vh;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+          color:#fff;
+        }
+        .wh-phone{width:390px;height:844px;background:#000;border-radius:40px;overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,.7);padding:32px 24px;position:relative;}
+        .wh-screen{display:none;width:100%;height:100%;position:relative;}
+        .wh-screen--active{display:block;}
+        .wh-top-bars{margin-bottom:40px;}
+        .wh-bar{height:24px;background:#7d7d7d;border-radius:12px;margin-bottom:10px;width:80%;}
+        .wh-bar:nth-child(2){width:70%;}
+        .wh-bar:nth-child(3){width:60%;}
+        .wh-center{display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:24px;}
+        .wh-logo{width:140px;height:140px;border-radius:32px;background:#fff;display:flex;align-items:center;justify-content:center;color:#000;font-weight:bold;font-size:18px;text-align:center;padding:8px;}
+        .wh-user{width:56px;height:56px;border-radius:50%;border:4px solid #fff;display:flex;align-items:center;justify-content:center;font-size:26px;}
+        .wh-title{font-family:"Impact","Anton",system-ui;letter-spacing:1px;font-size:24px;text-transform:uppercase;}
+        .wh-card{margin:20px auto 0;padding:24px 20px 28px;background:#fff;border-radius:22px;color:#000;}
+        .wh-field{margin-bottom:12px;}
+        .wh-field input{width:100%;padding:10px 12px;border:none;outline:none;background:#7d7d7d;border-radius:4px;color:#fff;font-size:14px;letter-spacing:0.2em;text-align:center;}
+        .wh-field input::placeholder{color:#f5f5f5;}
+        .wh-links{display:flex;justify-content:space-between;font-size:12px;margin:10px 0 18px;color:#000;}
+        .wh-link-btn{background:none;border:none;padding:0;color:inherit;cursor:pointer;font:inherit;}
+        .wh-submit{display:block;margin:0 auto;padding:8px 32px;border-radius:999px;border:none;background:#000;color:#fff;font-size:15px;cursor:pointer;}
+        .wh-bottom-row,.wh-bottom-bars{position:absolute;bottom:24px;left:24px;right:24px;display:flex;align-items:center;gap:16px;}
+        .wh-bottom-logo{width:90px;height:90px;border-radius:24px;background:#fff;display:flex;align-items:center;justify-content:center;color:#000;font-weight:bold;font-size:10px;text-align:center;padding:6px;}
+        .wh-back{position:absolute;top:10px;left:6px;font-size:28px;cursor:pointer;user-select:none;}
+        .wh-small-text{margin-top:8px;font-size:12px;color:#000;}
+        .wh-forgot-card,.wh-verify-card{margin-top:80px;}
+        .wh-home-wrap{height:100%;background:#fff;border-radius:26px;padding:32px 20px 24px;position:relative;overflow:hidden;color:#000;}
+        .wh-home-back{position:absolute;top:16px;left:12px;font-size:28px;cursor:pointer;}
+        .wh-home-circle{position:absolute;width:360px;height:360px;border-radius:50%;background:#7d7d7d;top:80px;left:50%;transform:translateX(-50%);opacity:.8;}
+        .wh-home-content{position:relative;margin-top:72px;text-align:center;z-index:1;max-height:calc(100% - 40px);overflow-y:auto;padding-bottom:8px;}
+        .wh-home-title{font-family:"Impact","Anton",system-ui;margin-top:8px;margin-bottom:12px;font-size:22px;}
+        .wh-home-sub{font-weight:600;margin-bottom:16px;letter-spacing:1px;}
+        .wh-service{width:80%;margin:0 auto 10px;padding:12px;border-radius:16px;background:#7d7d7d;border:none;font-weight:600;color:#000;cursor:pointer;}
+        .wh-advice-card{margin-top:40px;text-align:center;}
+        .wh-advice-text{font-size:14px;margin-bottom:16px;color:#000;}
+        .wh-error{color:red;margin-top:8px;font-size:12px;text-align:center;}
+        .wh-hint{color:#333;margin:0 auto 10px;font-size:11px;max-width:85%;text-align:center;}
+        .wh-budget-scroll{max-height:calc(100vh - 180px);overflow-y:auto;padding-right:4px;-webkit-overflow-scrolling:touch;}
+        .wh-label{display:block;font-size:11px;color:#333;margin-bottom:4px;text-align:left;font-weight:600;}
+        .wh-field input.wh-input-money{letter-spacing:normal;text-align:left;}
+        .wh-budget-result{background:#f0f0f0;border-radius:12px;padding:14px;margin-top:12px;text-align:left;font-size:12px;}
+        .wh-budget-result h4{margin:0 0 8px;font-size:14px;}
+        .wh-balance-pill{display:inline-block;margin-top:8px;padding:8px 14px;border-radius:999px;font-weight:700;font-size:13px;}
+        .wh-balance-highly{background:#1b5e20;color:#fff;}
+        .wh-balance-moderate{background:#f9a825;color:#000;}
+        .wh-balance-risky{background:#b71c1c;color:#fff;}
+        .wh-dl-scroll{max-height:38vh;overflow-y:auto;margin-bottom:10px;}
+        .wh-dl-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;padding:8px;margin-bottom:6px;background:#eee;border-radius:8px;font-size:11px;}
+        .wh-dl-row small{display:block;opacity:0.85;margin-top:2px;}
+        .wh-pill-in{display:inline-block;padding:2px 8px;border-radius:6px;background:#1b5e20;color:#fff;font-size:10px;}
+        .wh-pill-ex{display:inline-block;padding:2px 8px;border-radius:6px;background:#b71c1c;color:#fff;font-size:10px;}
+        .wh-hub-btn{width:88%;margin:8px auto;padding:14px;border-radius:16px;border:none;background:#7d7d7d;font-weight:700;cursor:pointer;}
+        .wh-form{background:#fff;border-radius:22px;padding:20px;margin-top:12px;}
+        .wh-form-group{margin-bottom:12px;}
+        .wh-input{width:100%;padding:10px;border:none;background:#7d7d7d;border-radius:4px;color:#fff;font-size:14px;box-sizing:border-box;}
+        .wh-input::placeholder{color:#f5f5f5;}
+        .wh-btn{display:block;margin:0 auto;padding:8px 32px;border-radius:999px;border:none;background:#000;color:#fff;font-size:15px;cursor:pointer;}
+        .wh-btn--primary{background:#000;}
+        .wh-btn--secondary{background:#7d7d7d;margin-top:8px;}
+        .wh-planning-result{background:#fff;border-radius:22px;padding:20px;margin-top:12px;color:#000;}
+        .wh-result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+        .wh-goal-summary{background:#f0f0f0;border-radius:12px;padding:14px;margin-bottom:16px;}
+        .wh-goal-summary h4{margin:0 0 8px;font-size:16px;}
+        .wh-goal-summary p{margin:4px 0;font-size:12px;}
+        .wh-plans{margin-bottom:16px;}
+        .wh-plan{background:#f8f8f8;border-radius:12px;padding:14px;margin-bottom:12px;border-left:4px solid #7d7d7d;}
+        .wh-plan--comfortable{border-left-color:#4caf50;}
+        .wh-plan--balanced{border-left-color:#ff9800;}
+        .wh-plan--aggressive{border-left-color:#f44336;}
+        .wh-plan-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+        .wh-plan-header h5{margin:0;font-size:14px;}
+        .wh-difficulty{padding:2px 8px;border-radius:6px;font-size:10px;font-weight:600;}
+        .wh-difficulty--easy{background:#4caf50;color:#fff;}
+        .wh-difficulty--medium{background:#ff9800;color:#fff;}
+        .wh-difficulty--hard{background:#f44336;color:#fff;}
+        .wh-plan-details p{margin:4px 0;font-size:11px;}
+        .wh-insights{background:#f0f0f0;border-radius:12px;padding:14px;}
+        .wh-insights h4{margin:0 0 8px;font-size:14px;}
+        .wh-insights-content p{margin:6px 0;font-size:12px;}
+        .wh-insight{color:#1976d2;}
+        .wh-suggestion{color:#388e3c;}
+        .wh-market-analysis{background:#f8f8f8;border-radius:12px;padding:14px;margin-bottom:16px;}
+        .wh-market-overview p{margin:4px 0;font-size:12px;}
+        .wh-deviation-analysis{background:#e3f2fd;border-radius:8px;padding:10px;margin-top:8px;}
+        .wh-deviation-suggestion{font-weight:600;color:#1565c0;margin-bottom:4px;}
+        .wh-car-recommendations{margin-top:12px;}
+        .wh-car-recommendations h5{margin:0 0 8px;font-size:13px;}
+        .wh-car-card{background:#fff;border-radius:8px;padding:10px;margin-bottom:8px;border:1px solid #ddd;}
+        .wh-car-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+        .wh-car-header h6{margin:0;font-size:12px;font-weight:600;}
+        .wh-car-price{font-weight:600;color:#2e7d32;}
+        .wh-car-details p{margin:2px 0;font-size:10px;}
+        .wh-price-higher{color:#d32f2f;}
+        .wh-price-lower{color:#2e7d32;}
+        .wh-savings-suggestion{background:#e8f5e8;border-radius:12px;padding:14px;margin-bottom:16px;}
+        .wh-suggestion-message{font-style:italic;color:#1b5e20;margin:8px 0;}
+        .wh-suggestion-details p{margin:4px 0;font-size:11px;}
+        .wh-feasibility{padding:2px 8px;border-radius:6px;font-size:10px;font-weight:600;}
+        .wh-feasibility--feasible{background:#4caf50;color:#fff;}
+        .wh-feasibility--challenging{background:#ff9800;color:#fff;}
+        .wh-feasibility--not_feasible{background:#f44336;color:#fff;}
+        .wh-create-goal{background:#fff;border-radius:22px;padding:20px;margin-bottom:16px;}
+        .wh-add-savings{background:#fff;border-radius:22px;padding:20px;margin-bottom:16px;}
+        .wh-form-row{display:flex;gap:12px;margin-bottom:12px;}
+        .wh-form-row .wh-form-group{flex:1;}
+        .wh-goals-list{background:#fff;border-radius:22px;padding:20px;}
+        .wh-empty-state{text-align:center;color:#666;padding:20px;}
+        .wh-goal-card{background:#f8f8f8;border-radius:12px;padding:16px;margin-bottom:12px;border-left:4px solid #2196f3;}
+        .wh-goal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+        .wh-goal-status{padding:4px 8px;border-radius:6px;font-size:10px;font-weight:600;}
+        .wh-goal-status--active{background:#2196f3;color:#fff;}
+        .wh-goal-status--completed{background:#4caf50;color:#fff;}
+        .wh-progress-section{margin:12px 0;}
+        .wh-progress-info{display:flex;justify-content:space-between;margin-bottom:8px;}
+        .wh-progress-bar{height:8px;background:#e0e0e0;border-radius:4px;overflow:hidden;}
+        .wh-progress-fill{height:100%;background:#4caf50;transition:width 0.3s ease;}
+        .wh-goal-insights{margin-top:12px;padding-top:12px;border-top:1px solid #ddd;}
+        .wh-insight-text{color:#1976d2;font-size:12px;margin-bottom:4px;}
+        .wh-suggestion-text{color:#388e3c;font-size:12px;margin-bottom:4px;}
+        .wh-deadline-info{color:#666;font-size:11px;}
+        .wh-loading{text-align:center;padding:20px;color:#666;}
+        .wh-goals-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+        .wh-history-toggle{font-size:12px;padding:6px 12px;}
+        .wh-statistics-card{background:#f8f8f8;border-radius:12px;padding:16px;margin-bottom:20px;}
+        .wh-stats-grid{display:grid;grid-template-columns:repeat(2, 1fr);gap:12px;margin-bottom:16px;}
+        .wh-stat-item{text-align:center;padding:12px;background:#fff;border-radius:8px;}
+        .wh-stat-number{font-size:18px;font-weight:700;color:#2196f3;margin-bottom:4px;}
+        .wh-stat-label{font-size:11px;color:#666;margin:0;}
+        .wh-stats-summary{background:#e3f2fd;border-radius:8px;padding:12px;}
+        .wh-stats-summary p{margin:4px 0;font-size:12px;}
+        .wh-completed-goals{background:#fff;border-radius:22px;padding:20px;}
+        .wh-goal-card--completed{border-left-color:#4caf50;background:#f1f8f9;}
+        .wh-completion-details{margin-top:12px;padding-top:12px;border-top:1px solid #e0e0e0;}
+        .wh-completion-details p{margin:6px 0;font-size:11px;}
+        .wh-delete-btn{background:none;border:none;color:#d32f2f;cursor:pointer;padding:4px;border-radius:4px;font-size:14px;}
+        .wh-delete-btn:hover{background:#ffebee;}
+        .wh-motivational{background:#f8f8f8;border-radius:12px;padding:16px;margin-bottom:16px;text-align:center;}
+        .wh-motivational-emoji{font-size:24px;margin-bottom:8px;display:block;}
+        .wh-motivational-text{font-size:14px;color:#333;margin:0;}
+        .wh-health-score{background:#fff;border-radius:22px;padding:20px;margin-bottom:16px;}
+        .wh-score-display{text-align:center;margin-bottom:16px;}
+        .wh-score-circle{width:80px;height:80px;border-radius:50%;margin:0 auto 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;}
+        .wh-score-number{font-size:24px;line-height:1;}
+        .wh-score-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;}
+        .wh-advice-categories{background:#fff;border-radius:22px;padding:20px;margin-bottom:16px;}
+        .wh-category-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+        .wh-category-tab{padding:8px 16px;border:1px solid #ddd;border-radius:8px;background:#f5f5f5;font-size:12px;cursor:pointer;transition:all 0.3s ease;}
+        .wh-category-tab:hover{background:#e3f2fd;border-color:#2196f3;}
+        .wh-category-tab--active{background:#2196f3;color:#fff;border-color:#1976d2;}
+        .wh-personalized-advice{background:#fff;border-radius:22px;padding:20px;}
+        .wh-advice-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+        .wh-refresh-btn{padding:6px 12px;font-size:12px;}
+        .wh-advice-loading{text-align:center;padding:20px;}
+        .wh-loading-spinner{width:24px;height:24px;border:3px solid #f3f3f3;border-top:3px solid #2196f3;border-radius:50%;margin:0 auto 12px;animation:spin 1s linear infinite;}
+        @keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+        .wh-advice-list{max-height:400px;overflow-y:auto;}
+        .wh-advice-item{background:#f8f8f8;border-radius:12px;padding:16px;margin-bottom:12px;border-left:4px solid;transition:all 0.3s ease;}
+        .wh-advice-item:hover{transform:translateX(4px);box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+        .wh-advice-item--pulse{animation:pulse 2s infinite;}
+        .wh-advice-item--bounce{animation:bounce 1s ease-in-out;}
+        .wh-advice-item--slideIn{animation:slideIn 0.5s ease-out;}
+        .wh-advice-item--shake{animation:shake 0.5s;}
+        .wh-advice-item--celebrate{animation:celebrate 1s ease-in-out;}
+        .wh-advice-item--rotate{animation:rotate 0.5s ease-in-out;}
+        .wh-advice-item--grow{animation:grow 0.5s ease-out;}
+        .wh-advice-item--sparkle{animation:sparkle 1.5s ease-in-out;}
+        .wh-advice-item--build{animation:build 0.8s ease-in-out;}
+        @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+        @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0);}40%{transform:translateY(-10px);}60%{transform:translateY(-5px);}}
+        @keyframes slideIn{from{opacity:0;transform:translateX(-20px);}to{opacity:1;transform:translateX(0);}}
+        @keyframes shake{0%,100%{transform:translateX(0);}10%,30%,50%,70%,90%{transform:translateX(-2px);}20%,40%,60%,80%{transform:translateX(2px);}}
+        @keyframes celebrate{0%{transform:scale(0.8) rotate(0deg);}50%{transform:scale(1.1) rotate(180deg);}100%{transform:scale(1) rotate(360deg);}}
+        @keyframes rotate{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+        @keyframes grow{from{transform:scale(0.8);}to{transform:scale(1);}}
+        @keyframes sparkle{0%,100%{opacity:1;}50%{opacity:0.5;transform:scale(1.1);}}
+        @keyframes build{from{transform:scale(0.9) rotate(-2deg);}to{transform:scale(1) rotate(0deg);}}
+        .wh-advice-header{display:flex;align-items:center;margin-bottom:12px;}
+        .wh-advice-emoji{font-size:20px;margin-right:8px;}
+        .wh-advice-title{margin:0;font-size:14px;font-weight:600;}
+        .wh-advice-content{margin-top:8px;}
+        .wh-advice-message{font-weight:500;margin-bottom:8px;color:#333;}
+        .wh-advice-details{margin-top:8px;}
+        .wh-advice-detailed{font-size:12px;color:#666;line-height:1.4;}
+        .wh-logo img{width:140px;height:140px;border-radius:32px;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.2);transition:transform 0.3s ease;}
+        .wh-logo img:hover{transform:scale(1.05);}
+        .wh-header{display:flex;align-items:center;padding:16px 20px;background:#000;border-bottom:1px solid #333;}
+        .wh-back-btn{background:none;border:none;color:#fff;font-size:24px;padding:8px;border-radius:4px;cursor:pointer;transition:background 0.3s ease;}
+        .wh-back-btn:hover{background:#333;}
+        .wh-title{font-size:18px;font-weight:700;color:#fff;margin:0;margin-left:12px;}
+        .wh-content{padding:20px;max-height:calc(100vh - 140px);overflow-y:auto;}
+        .wh-phone{width:375px;height:812px;background:#000;border-radius:40px;border:8px solid #222;box-shadow:0 10px 40px rgba(0,0,0,0.5);overflow:hidden;position:relative;}
+        .wh-screen{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transform:translateX(100%);transition:all 0.3s ease;}
+        .wh-screen--active{opacity:1;transform:translateX(0);}
+        .wh-card{background:#1a1a1a;border-radius:20px;padding:20px;margin:16px;border:1px solid #333;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:transform 0.3s ease,box-shadow 0.3s ease;}
+        .wh-card:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(0,0,0,0.4);}
+        .wh-input{width:100%;padding:12px 16px;background:#2a2a2a;border:1px solid #444;border-radius:8px;color:#fff;font-size:14px;transition:all 0.3s ease;}
+        .wh-input:focus{outline:none;border-color:#fff;background:#333;box-shadow:0 0 0 2px rgba(255,255,255,0.1);}
+        .wh-btn{width:100%;padding:14px 20px;background:#000;border:1px solid #333;border-radius:8px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s ease;}
+        .wh-btn:hover{background:#1a1a1a;border-color:#fff;transform:translateY(-1px);box-shadow:0 4px 12px rgba(255,255,255,0.1);}
+        .wh-btn--primary{background:#fff;color:#000;border-color:#fff;}
+        .wh-btn--primary:hover{background:#f0f0f0;color:#000;}
+        .wh-btn--secondary{background:#2a2a2a;color:#fff;border-color:#444;}
+        .wh-btn--secondary:hover{background:#333;border-color:#666;}
+        .wh-submit{width:100%;padding:14px 20px;background:#fff;color:#000;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s ease;}
+        .wh-submit:hover{background:#f0f0f0;transform:translateY(-1px);box-shadow:0 4px 12px rgba(255,255,255,0.2);}
+        .wh-submit:disabled{background:#666;color:#999;cursor:not-allowed;transform:none;box-shadow:none;}
+        .wh-field{margin-bottom:16px;}
+        .wh-label{display:block;margin-bottom:6px;color:#ccc;font-size:12px;font-weight:500;}
+        .wh-error{color:#ff4444;font-size:12px;margin-top:8px;text-align:center;}
+        .wh-hint{color:#999;font-size:11px;text-align:center;margin-top:8px;}
+        .wh-center{text-align:center;}
+        .wh-back{position:absolute;top:20px;left:20px;color:#fff;font-size:24px;cursor:pointer;padding:8px;border-radius:4px;transition:background 0.3s ease;}
+        .wh-back:hover{background:#333;}
+        .wh-user{font-size:48px;margin-bottom:12px;}
+        .wh-home-title{font-size:22px;font-weight:700;color:#fff;margin-bottom:8px;}
+        .wh-home-sub{font-size:14px;color:#999;margin-bottom:20px;}
+        .wh-service{width:80%;margin:8px auto;padding:16px;background:#2a2a2a;border:1px solid #444;border-radius:12px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s ease;}
+        .wh-service:hover{background:#333;border-color:#666;transform:translateY(-2px);box-shadow:0 4px 12px rgba(255,255,255,0.1);}
+        .wh-top-bars{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#000;border-bottom:1px solid #333;}
+        .wh-time{color:#999;font-size:12px;}
+        .wh-icons{display:flex;gap:8px;}
+        .wh-icon{width:20px;height:20px;background:#333;border-radius:50%;}
+        .wh-notch{width:120px;height:25px;background:#000;border-radius:0 0 20px 20px;margin:0 auto;border:1px solid #333;border-top:none;}
+        .wh-form-group{margin-bottom:16px;}
+        .wh-progress-bar{height:6px;background:#333;border-radius:3px;overflow:hidden;margin:8px 0;}
+        .wh-progress-fill{height:100%;background:#fff;transition:width 0.5s ease;}
+        .wh-loading{text-align:center;padding:20px;color:#999;}
+        .wh-small-text{font-size:11px;color:#999;}
+        .wh-empty-state{text-align:center;padding:40px 20px;color:#666;font-style:italic;}
+        /* Responsive design */
+        @media (max-width: 400px) {
+          .wh-phone {
+            width: 100%;
+            height: 100vh;
+            border-radius: 0;
+            border: none;
+          }
+          .wh-content {
+            padding: 16px;
+          }
+          .wh-logo {
+            width: 50px;
+            height: 50px;
+          }
+        }
+        /* Smooth animations */
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .wh-fade-in {
+          animation: fadeIn 0.3s ease-out;
+        }
+        /* Enhanced focus states */
+        .wh-input:focus, .wh-btn:focus, .wh-submit:focus {
+          outline: 2px solid #fff;
+          outline-offset: 2px;
+        }
+        /* Better borders and shadows */
+        .wh-card, .wh-input, .wh-btn, .wh-submit {
+          border: 1px solid #444;
+        }
+        .wh-card {
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+      </style><div class="wh-phone"><div class="wh-screen wh-screen--active"><div class="wh-top-bars"><div class="wh-bar"></div><div class="wh-bar"></div><div class="wh-bar"></div></div><div class="wh-center"><img src="/hook.png" alt="Wallet Hook" class="wh-logo"/><div class="wh-user">👤</div><div class="wh-title">LOGIN</div></div><div class="wh-card"><form><div class="wh-field"><input type="email" placeholder="Gmail" required="" value=""/></div><div class="wh-field"><input type="password" placeholder="password" required="" value=""/></div><div class="wh-links"><button type="button" class="wh-link-btn">forgot password</button><button type="button" class="wh-link-btn">create account</button></div><button class="wh-submit" type="submit">Submit</button></form></div></div><div class="wh-screen "><div class="wh-center" style="margin-top:16px"><div class="wh-user">👤</div><div class="wh-title">CREATE ACCOUNT</div></div><div class="wh-card"><form><div class="wh-field"><input type="email" placeholder="Gmail" required="" value=""/></div><div class="wh-field"><input type="password" placeholder="password" required="" value=""/></div><div class="wh-field"><input type="password" placeholder="Confirm password" required="" value=""/></div><div class="wh-small-text">already have an account<!-- --> <button type="button" class="wh-link-btn">Login</button></div><div style="margin-top:16px"><button class="wh-submit" type="submit">Submit</button></div></form></div></div><div class="wh-screen "><span class="wh-back">←</span><div class="wh-center" style="margin-top:60px"><img src="/hook.png" alt="Wallet Hook" class="wh-logo"/><div class="wh-title">WALLET HOOK</div><div class="wh-home-sub">Your Personal Finance Manager</div></div><div class="wh-card wh-forgot-card"><form><div class="wh-field"><input type="email" placeholder="Gmail" required="" value=""/></div><button class="wh-submit" type="submit">Send Reset Email</button></form></div></div><div class="wh-screen "><span class="wh-back">←</span><div class="wh-center" style="margin-top:60px"><div class="wh-user">✅</div><div class="wh-title">CHECK EMAIL</div></div><div class="wh-card wh-verify-card"><p class="wh-small-text">Password reset email has been sent to <!-- -->. Please check your inbox (and spam folder) and follow the link to reset your password.</p><p class="wh-small-text" style="margin-top:12px;font-size:11px;color:#666">If you don&#x27;t receive the email within a few minutes, please:<br/>• Check your spam/junk folder<br/>• Verify the email address is correct<br/>• Try again or contact support</p><button class="wh-submit" style="margin-top:24px">Back to Login</button></div></div><div class="wh-screen "><div class="wh-home-wrap"><span class="wh-home-back">←</span><div class="wh-home-circle"></div><div class="wh-home-content"><div class="wh-home-title">WELCOME</div><div class="wh-home-sub">SELECT THE SERVICE</div><button type="button" class="wh-service" style="background:#5a5a5a;color:#fff">🔐 <!-- -->Set safety PIN</button><button type="button" class="wh-service">BUDGETING</button><button type="button" class="wh-service">PLANNING</button><button type="button" class="wh-service">SAVINGS</button><button type="button" class="wh-service">ADVICES</button><button type="button" class="wh-service" style="background:#ff3b30;margin-top:16px">🚪 Logout</button></div></div></div><div class="wh-screen "><span class="wh-back">←</span><div class="wh-center" style="margin-top:56px"><div class="wh-user">🔒</div><div class="wh-title" style="font-size:20px">ENTER PIN</div><p class="wh-small-text" style="text-align:center">4-digit safety PIN</p></div><div class="wh-card wh-forgot-card"><form><div class="wh-field"><input type="password" inputMode="numeric" pattern="\d{4}" maxLength="4" placeholder="••••" autoComplete="off" value=""/></div><button class="wh-submit" type="submit">Unlock</button></form></div></div><div class="wh-screen "><span class="wh-back">←</span><div class="wh-center" style="margin-top:48px"><div class="wh-user">🔐</div><div class="wh-title" style="font-size:18px">SET PIN</div></div><div class="wh-card wh-forgot-card"><form><div class="wh-field"><input type="password" inputMode="numeric" maxLength="4" placeholder="New PIN (4 digits)" value=""/></div><div class="wh-field"><input type="password" inputMode="numeric" maxLength="4" placeholder="Confirm new PIN" value=""/></div><button class="wh-submit" type="submit">Save PIN</button></form></div></div><div class="wh-screen "><span class="wh-back">←</span><div class="wh-center" style="margin-top:48px;margin-bottom:12px"><div class="wh-user">📊</div><div class="wh-title" style="font-size:20px">BUDGETING</div><p class="wh-small-text" style="text-align:center">Choose a tool</p></div><div class="wh-card wh-forgot-card" style="margin-top:8px"><button type="button" class="wh-hub-btn">Monthly budget calculator</button><button type="button" class="wh-hub-btn">Daily logs</button><button type="button" class="wh-hub-btn">Log calendar (month)</button><button type="button" class="wh-hub-btn">Monthly summary &amp; insights</button></div></div><div class="wh-screen "><span class="wh-back">←</span><div class="wh-center" style="margin-top:44px;margin-bottom:8px"><div class="wh-user">📊</div><div class="wh-title" style="font-size:20px">BUDGETING</div></div><div class="wh-card wh-forgot-card" style="margin-top:12px;max-height:72vh;overflow:hidden"><p class="wh-small-text" style="text-align:center;margin-bottom:12px">Enter your figures. Daily costs are converted to monthly (×<!-- -->30<!-- -->).</p><form class="wh-budget-scroll"><div class="wh-field"><label class="wh-label">1. Monthly income</label><input class="wh-input-money" type="number" min="0" step="0.01" placeholder="0.00" required="" value=""/></div><div class="wh-field"><label class="wh-label">2. Average daily food cost (→ monthly)</label><input class="wh-input-money" type="number" min="0" step="0.01" placeholder="0.00" value=""/></div><div class="wh-field"><label class="wh-label">3. Monthly rent</label><input class="wh-input-money" type="number" min="0" step="0.01" placeholder="0.00" value=""/></div><div class="wh-field"><label class="wh-label">4. Daily commute expenditure (→ monthly)</label><input class="wh-input-money" type="number" min="0" step="0.01" placeholder="0.00" value=""/></div><div class="wh-field"><label class="wh-label">5. Daily food expenditure (→ monthly)</label><input class="wh-input-money" type="number" min="0" step="0.01" placeholder="0.00" value=""/></div><div class="wh-field"><label class="wh-label">6. Accommodities expenditure (monthly)</label><input class="wh-input-money" type="number" min="0" step="0.01" placeholder="0.00" value=""/></div><div class="wh-field"><label class="wh-label">7. Other (monthly)</label><input class="wh-input-money" type="number" min="0" step="0.01" placeholder="0.00" value=""/></div><button class="wh-submit" type="submit" style="margin-top:8px">Calculate balance</button></form></div></div><div class="wh-screen "><span class="wh-back">←</span><div class="wh-center" style="margin-top:40px;margin-bottom:6px"><div class="wh-user">📝</div><div class="wh-title" style="font-size:18px">DAILY LOGS</div></div><div class="wh-card wh-forgot-card" style="margin-top:8px"><div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px"><button type="button" class="wh-link-btn" style="font-size:20px">◀</button><input type="date" class="wh-input-money" style="flex:1;text-align:center" value="2026-03-29"/><button type="button" class="wh-link-btn" style="font-size:20px">▶</button></div><p class="wh-small-text" style="text-align:center">One log per day — multiple transactions inside.</p><div class="wh-dl-scroll"><p class="wh-small-text" style="text-align:center">No entries yet.</p></div><form><div class="wh-field"><label class="wh-label">Amount</label><input class="wh-input-money" type="number" min="0" step="0.01" placeholder="0" value=""/></div><div class="wh-field"><label class="wh-label">Category</label><select class="wh-input-money" style="width:100%;padding:10px"><option value="Food" selected="">Food</option><option value="Transport">Transport</option><option value="Rent">Rent</option><option value="Utilities">Utilities</option><option value="Entertainment">Entertainment</option><option value="Healthcare">Healthcare</option><option value="Shopping">Shopping</option><option value="Salary">Salary</option><option value="Education">Education</option><option value="Other">Other</option></select></div><div class="wh-field"><label class="wh-label">Note</label><input class="wh-input-money" type="text" placeholder="Optional" value=""/></div><div class="wh-field"><label class="wh-label">Type</label><div style="display:flex;gap:12px"><label class="wh-small-text"><input type="radio" name="txtype" checked=""/> <!-- -->Expense</label><label class="wh-small-text"><input type="radio" name="txtype"/> <!-- -->Income</label></div></div><button class="wh-submit" type="submit">Add entry</button></form><button type="button" class="wh-submit" style="margin-top:12px;background:#333">Save day to cloud</button></div></div><div class="wh-screen "><span class="wh-back">←</span><div class="wh-center" style="margin-top:44px;margin-bottom:8px"><div class="wh-user">📅</div><div class="wh-title" style="font-size:18px">LOG CALENDAR</div></div><div class="wh-card wh-forgot-card"><div class="wh-field"><label class="wh-label">Month</label><input type="month" class="wh-input-money" value="2026-03"/></div><div class="wh-dl-scroll" style="max-height:50vh"><p class="wh-small-text">No logs this month.</p></div></div></div><div class="wh-screen "><span class="wh-back">←</span><div class="wh-center" style="margin-top:44px;margin-bottom:8px"><div class="wh-user">📈</div><div class="wh-title" style="font-size:18px">MONTHLY INSIGHTS</div></div><div class="wh-card wh-forgot-card"><div class="wh-field"><label class="wh-label">Month</label><input type="month" class="wh-input-money" value="2026-03"/></div><p class="wh-small-text">No data.</p></div></div><div class="wh-screen "><div class="wh-header"><button type="button" class="wh-back-btn">‹</button><h2 class="wh-title">PLANNING</h2></div><div class="wh-content"><form class="wh-form"><div class="wh-form-group"><label class="wh-label">Goal Name</label><input type="text" class="wh-input" placeholder="e.g., Buy a Car" required="" value=""/></div><div class="wh-form-group"><label class="wh-label">Goal Type</label><select class="wh-input"><option value="car" selected="">Car</option><option value="property">Property</option><option value="jewelry">Jewelry</option><option value="travel">Travel</option><option value="other">Other</option></select></div><div class="wh-form-group"><label class="wh-label">Target Amount ($)</label><input type="number" class="wh-input" placeholder="50000" required="" value=""/></div><div class="wh-form-group"><label class="wh-label">Current Savings ($)</label><input type="number" class="wh-input" placeholder="5000" value=""/></div><div class="wh-form-group"><label class="wh-label">Monthly Income ($)</label><input type="number" class="wh-input" placeholder="5000" required="" value=""/></div><div class="wh-form-group"><label class="wh-label">Fixed Monthly Expenses ($)</label><input type="number" class="wh-input" placeholder="2000" value=""/></div><div class="wh-form-group"><label class="wh-label">Variable Monthly Expenses ($)</label><input type="number" class="wh-input" placeholder="1500" value=""/></div><div class="wh-form-group"><label class="wh-label">Timeframe (months, optional)</label><input type="number" class="wh-input" placeholder="24" value=""/></div><div class="wh-form-group"><label class="wh-label">Priority</label><select class="wh-input"><option value="low">Low</option><option value="medium" selected="">Medium</option><option value="high">High</option></select></div><button type="submit" class="wh-btn wh-btn--primary">Generate Plans</button></form></div></div><div class="wh-screen "><div class="wh-header"><button type="button" class="wh-back-btn">‹</button><h2 class="wh-title">ADVICES</h2></div><div class="wh-content"><div class="wh-health-score"><h4>Financial Health Score</h4><div class="wh-score-display"><div class="wh-score-circle" style="background:#f44336"><span class="wh-score-number">50</span><span class="wh-score-label">Score</span></div><p></p></div></div><div class="wh-advice-categories"><h4>Advice Categories</h4><div class="wh-category-tabs"><button type="button" class="wh-category-tab wh-category-tab--active">Budget</button><button type="button" class="wh-category-tab ">Savings</button><button type="button" class="wh-category-tab ">Investment</button><button type="button" class="wh-category-tab ">Debt</button><button type="button" class="wh-category-tab ">Goals</button></div></div><div class="wh-personalized-advice"><div class="wh-advice-header"><h4>Personalized Advice</h4><button type="button" class="wh-btn wh-btn--secondary wh-refresh-btn">Refresh</button></div><div class="wh-advice-list"><p class="wh-empty-state">No advice available for this category yet.</p></div></div></div></div><div class="wh-screen "><div class="wh-header"><button type="button" class="wh-back-btn">‹</button><h2 class="wh-title">SAVINGS</h2></div><div class="wh-content"><div class="wh-create-goal"><h4>Create New Goal</h4><form class="wh-form"><div class="wh-form-row"><div class="wh-form-group"><label class="wh-label">Goal Name</label><input type="text" class="wh-input" placeholder="e.g., Emergency Fund" required="" value=""/></div><div class="wh-form-group"><label class="wh-label">Target Amount (Rs.)</label><input type="number" class="wh-input" placeholder="50000" required="" value=""/></div></div><div class="wh-form-row"><div class="wh-form-group"><label class="wh-label">Current Saved (Rs.)</label><input type="number" class="wh-input" placeholder="0" value=""/></div><div class="wh-form-group"><label class="wh-label">Deadline (optional)</label><input type="date" class="wh-input" min="2026-03-29" value=""/></div></div><button type="submit" class="wh-btn wh-btn--primary">Create Goal</button></form></div><div class="wh-add-savings"><h4>Add Savings</h4><form class="wh-form"><div class="wh-form-row"><div class="wh-form-group"><label class="wh-label">Select Goal</label><select class="wh-input" required=""><option value="" selected="">Choose a goal...</option></select></div><div class="wh-form-group"><label class="wh-label">Amount (Rs.)</label><input type="number" class="wh-input" placeholder="1000" required="" value=""/></div></div><div class="wh-form-group"><label class="wh-label">Date</label><input type="date" class="wh-input" max="2026-03-29" required="" value="2026-03-29"/></div><button type="submit" class="wh-btn wh-btn--primary">Add Savings</button></form></div><div class="wh-goals-list"><div class="wh-goals-header"><h4>Your Savings Goals</h4><button type="button" class="wh-btn wh-btn--secondary wh-history-toggle">📈 Goals History</button></div><div class="wh-completed-goals"><h5>🎉 Completed Goals</h5><p class="wh-empty-state">No completed goals yet.</p></div></div></div></div><div class="wh-screen wh-screen--active"><div class="wh-top-bars"><div class="wh-bar"></div><div class="wh-bar"></div><div class="wh-bar"></div></div><div class="wh-center"><img src="/hook.png" alt="Wallet Hook" class="wh-logo"/><div class="wh-user">👤</div><div class="wh-title">LOGIN</div></div><div class="wh-card"><form><div class="wh-field"><input type="email" placeholder="Gmail" required="" value=""/></div><div class="wh-field"><input type="password" placeholder="password" required="" value=""/></div><div class="wh-links"><button type="button" class="wh-link-btn">forgot password</button><button type="button" class="wh-link-btn">create account</button></div><button class="wh-submit" type="submit">Submit</button></form></div></div></div></div><!--$--><!--/$--><script src="/_next/static/chunks/4b9eae0c8dc7e975.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[39756,[\"/_next/static/chunks/2f236954d6a65e12.js\"],\"default\"]\n3:I[37457,[\"/_next/static/chunks/2f236954d6a65e12.js\"],\"default\"]\n4:I[47257,[\"/_next/static/chunks/2f236954d6a65e12.js\"],\"ClientPageRoot\"]\n5:I[31713,[\"/_next/static/chunks/aee0a9c6b42b3f55.js\"],\"default\"]\n8:I[97367,[\"/_next/static/chunks/2f236954d6a65e12.js\"],\"OutletBoundary\"]\n9:\"$Sreact.suspense\"\nb:I[97367,[\"/_next/static/chunks/2f236954d6a65e12.js\"],\"ViewportBoundary\"]\nd:I[97367,[\"/_next/static/chunks/2f236954d6a65e12.js\"],\"MetadataBoundary\"]\nf:I[68027,[\"/_next/static/chunks/2f236954d6a65e12.js\"],\"default\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"23gM55woZF2I4Zsa_p7Wu\",\"c\":[\"\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]}],[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"serverProvidedParams\":{\"searchParams\":{},\"params\":{},\"promises\":[\"$@6\",\"$@7\"]}}],[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/aee0a9c6b42b3f55.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L8\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@a\"}]}]]}],{},null,false,false]},null,false,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$Lb\",null,{\"children\":\"$Lc\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Le\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",[]],\"S\":true}\n"])</script><script>self.__next_f.push([1,"6:{}\n7:\"$0:f:0:1:1:children:0:props:children:0:props:serverProvidedParams:params\"\n"])</script><script>self.__next_f.push([1,"c:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"a:null\ne:[]\n"])</script></body></html>
