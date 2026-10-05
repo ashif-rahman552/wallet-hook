@@ -101,7 +101,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Users\\ACER\\OneDrive\\Desktop\\wallet hook",
+    "outputFileTracingRoot": "C:\\Users\\ACER",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -294,12 +294,12 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.js",
     "turbopack": {
-      "root": "C:\\Users\\ACER\\OneDrive\\Desktop\\wallet hook"
+      "root": "C:\\Users\\ACER"
     },
     "distDirRoot": ".next"
   },
   "appDir": "C:\\Users\\ACER\\OneDrive\\Desktop\\wallet hook",
-  "relativeAppDir": "",
+  "relativeAppDir": "OneDrive\\Desktop\\wallet hook",
   "files": [
     ".next\\routes-manifest.json",
     ".next\\server\\pages-manifest.json",
