@@ -1,3 +1,0 @@
-module.exports=[32226,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(31440);a.n(d("[project]/OneDrive/Desktop/wallet hook/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},77353,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(31440);a.n(d("[project]/OneDrive/Desktop/wallet hook/node_modules/next/dist/client/components/builtin/global-error.js"))},92730,a=>{"use strict";a.i(32226);var b=a.i(77353);a.n(b)}];
-
-//# sourceMappingURL=68b34_next_dist_client_components_builtin_global-error_7e9afa44.js.map
